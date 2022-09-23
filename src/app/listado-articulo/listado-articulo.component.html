@@ -1,0 +1,35 @@
+<br>
+  <div class="container">
+
+    <button class="btn btn-primary" (click)="agregarArticulo()">Agregar articulo</button>
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Categoria</th>
+            <th scope="col" colspan="2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let art of articulos">
+            <td>{{art.id}}</td>
+            <td>{{art.codigo}}</td>
+            <td>{{art.nombre}}</td>
+            <td>{{art.stock}}</td>
+            <td>{{art.categoria.nombre}}</td>
+            <td>
+                <div>
+                    <span><a class="fa fa-pencil mr-10" (click)="editar(art.id)"></a></span> <p></p>
+                    <span><a class="fa fa-trash" (click)="borrar(art.id)"></a></span>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>

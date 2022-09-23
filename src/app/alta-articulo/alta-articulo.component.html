@@ -1,0 +1,53 @@
+<div class="container-fluid bg-primary py5">
+    <div class="container text-white">
+        <h1>{{titulo}}</h1>
+    </div>
+</div>
+<p></p>
+<div class="container">
+    <form #form ="ngForm">
+    <div class="row">
+        <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Codigo</label>
+                    <input required type="text"name="codigo" [(ngModel)] = "articulo.codigo" id="" class="form-control" >
+                 </div>
+        </div>
+        <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input required type="text"name="nombre" [(ngModel)] = "articulo.nombre" id="" class="form-control" >
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Precio</label> 
+                    <input required type="text"name="precio" [(ngModel)] = "articulo.precio" id="" class="form-control" >
+                </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="">Stock</label>
+                <input required type="text"name="stock" [(ngModel)] = "articulo.stock" id="" class="form-control" >
+            </div>
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="">Categoria</label> 
+                <select required   class="form-control" [(ngModel)] = "articulo.categoriaId" name="categoria" id="">
+                    <option  value="{{cat.id}}" *ngFor="let cat of categorias">{{cat.nombre}}</option>                  
+                </select>
+            </div>
+        </div>  
+    </div> 
+    <button class="btn btn-primary" [disabled]="form.invalid" (click)="altaArticulo()">Enviar</button> <p></p>
+    <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+</form>
+</div>
+
+
+
